@@ -36,3 +36,23 @@ CREATE TABLE PERSONA
 
 /*Verificar si se a craedo la tabla persona*/
  SHOW TABLES;
+
+ /* verificar estuctura de la tabla persona*/
+ SHOW COLUMNS IN PERSONA;
+ DESCRIBE PERSONA;
+
+ /*crear la tabla ubigeo*/
+ CREATE TABLE UBIGEO(
+     CODUBI CHAR (6),
+     DESTUBI VARCHAR (100),
+     PROVUBI VARCHAR (100),
+     DPTOUBI VARCHAR (100),
+     CONSTRAINT CODUBI_PK PRIMARY KEY (CODUBI)
+ );
+
+ /*Verificar que se haya creado la tabla ubigeo*/
+ SHOW TABLES;
+
+ /* verificar estuctura de la tabla persona*/
+ SHOW COLUMNS IN UBIGEO;
+ DESCRIBE UBIGEO;
