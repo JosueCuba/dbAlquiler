@@ -11,8 +11,7 @@ SET utf8;
 /*Poner en uso la base de datos*/
 USE dbAlquiler;
 /*Verificar la bas e dedatos este en uso*/
-SELECT DATABASE
-();
+SELECT DATABASES();
 
  /*Mostrar tablas*/
  SHOW TABLE;
@@ -128,3 +127,9 @@ SHOW TABLES;
  /* verificar estuctura de la tabla persona*/
  SHOW COLUMNS IN TIPO_VIVIENDA;
  DESCRIBE TIPO_VIVIENDA;
+
+
+/*relacion entre la tabla persona y la tabla uboigeo*/
+ALTER TABLE PERSONA
+    ADD CONSTRAINT UBIGEO_PK FOREIGN KEY (UBIGEO_CODUBI)
+    REFERENCES UBIGEO (CODUBI);
