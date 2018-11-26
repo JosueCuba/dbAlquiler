@@ -5,12 +5,14 @@ SHOW DATABASES;
 DROP DATABASE dbalquiler;
 /*crear nuestra base de datos alquiler teniendo en cuenbtra la configuracion*/
 CREATE DATABASE dbAlquiler
-DEFAULT CHARACTER SET utf8;
+DEFAULT CHARACTER
+SET utf8;
 
 /*Poner en uso la base de datos*/
 USE dbAlquiler;
 /*Verificar la bas e dedatos este en uso*/
-SELECT DATABASE();
+SELECT DATABASE
+();
 
  /*Mostrar tablas*/
  SHOW TABLE;
@@ -35,42 +37,94 @@ CREATE TABLE PERSONA
 );
 
 /*Verificar si se a craedo la tabla persona*/
- SHOW TABLES;
+SHOW TABLES;
 
  /* verificar estuctura de la tabla persona*/
  SHOW COLUMNS IN PERSONA;
  DESCRIBE PERSONA;
 
- /*crear la tabla ubigeo*/
- CREATE TABLE UBIGEO(
-     CODUBI CHAR (6),
-     DESTUBI VARCHAR (100),
-     PROVUBI VARCHAR (100),
-     DPTOUBI VARCHAR (100),
-     CONSTRAINT CODUBI_PK PRIMARY KEY (CODUBI)
- );
+/*crear la tabla ubigeo*/
+CREATE TABLE UBIGEO
+(
+    CODUBI CHAR (6),
+    DESTUBI VARCHAR (100),
+    PROVUBI VARCHAR (100),
+    DPTOUBI VARCHAR (100),
+    CONSTRAINT CODUBI_PK PRIMARY KEY (CODUBI)
+);
 
- /*Verificar que se haya creado la tabla ubigeo*/
- SHOW TABLES;
+/*Verificar que se haya creado la tabla ubigeo*/
+SHOW TABLES;
 
  /* verificar estuctura de la tabla persona*/
  SHOW COLUMNS IN UBIGEO;
  DESCRIBE UBIGEO;
 
 /*crear la tabla VIVENDA*/
- CREATE TABLE VIVIENDA(
-     CODVIV INT ,
-     DESCVIV VARCHAR (300),
-     DIRVIV VARCHAR (150),
-     UBIGEO_CODUBI CHAR (6),
-     ESTADOVIVIENDA_CODESTVIV INT,
-     TIPOVIVIENDA_CODTIPVIV INT,
-     CONSTRAINT CODVIV_PK PRIMARY KEY (CODVIV)
- );
+CREATE TABLE VIVIENDA
+(
+    CODVIV INT ,
+    DESCVIV VARCHAR (300),
+    DIRVIV VARCHAR (150),
+    UBIGEO_CODUBI CHAR (6),
+    ESTADOVIVIENDA_CODESTVIV INT,
+    TIPOVIVIENDA_CODTIPVIV INT,
+    CONSTRAINT CODVIV_PK PRIMARY KEY (CODVIV)
+);
 
- /*Verificar que se haya creado la tabla ubigeo*/
- SHOW TABLES;
+/*Verificar que se haya creado la tabla ubigeo*/
+SHOW TABLES;
 
  /* verificar estuctura de la tabla persona*/
  SHOW COLUMNS IN VIVIENDA;
  DESCRIBE VIVIENDA;
+
+/*crear la tabla ESTADO_VIVIENDA*/
+CREATE TABLE ESTADO_VIVIENDA
+(
+    CODESTVIV INT,
+    DESCESTVIV VARCHAR(50),
+    CONSTRAINT CODESTVIV_PK PRIMARY KEY (CODESTVIV)
+);
+
+/*crear la tabla TIPO_VIVIENDA*/
+
+CREATE TABLE TIPO_VIVIENDA
+(
+    CODTIPVIV INT,
+    DESCTIPVIV VARCHAR (50),
+    CONSTRAINT CODTIPVIV_PK PRIMARY KEY (CODTIPVIV)
+);
+/*Verificar que se haya creado la tablas*/
+SHOW TABLES;
+
+ /* verificar estuctura de la tablaS/
+ SHOW COLUMNS IN TIPO_VIVIENDA;
+ DESCRIBE TIPO_VIVIENDA;
+
+
+/*crear la tabla ALQUILER*/
+CREATE TABLE ALQUILER(
+    CODALQ INT,
+    FECINCALQ DATE,
+    PERSONA_PROP INT,
+    PERSONA_INQ INT,
+    CONSTRAINT CODALQ_PK PRIMARY KEY (CODALQ)
+);
+
+/*CREAR LA TABLA DETALLE_ALQUILER*/
+CREATE TABLE DETALLE_ALQUILER(
+    CODDETALQ INT,
+    VIVIENDA_CODVIV INT,
+    FECINDETALQ DATE,
+    COSTDETALQ DECIMAL(8,2),
+    ALQUILER_CODALQ INT,
+    CONSTRAINT CODDETALQ_PK PRIMARY KEY (CODDETALQ)
+);
+
+/*Verificar que se haya creado la tablas*/
+SHOW TABLES;
+
+ /* verificar estuctura de la tabla persona*/
+ SHOW COLUMNS IN TIPO_VIVIENDA;
+ DESCRIBE TIPO_VIVIENDA;
