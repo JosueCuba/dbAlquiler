@@ -56,3 +56,21 @@ CREATE TABLE PERSONA
  /* verificar estuctura de la tabla persona*/
  SHOW COLUMNS IN UBIGEO;
  DESCRIBE UBIGEO;
+
+/*crear la tabla VIVENDA*/
+ CREATE TABLE VIVIENDA(
+     CODVIV INT ,
+     DESCVIV VARCHAR (300),
+     DIRVIV VARCHAR (150),
+     UBIGEO_CODUBI CHAR (6),
+     ESTADOVIVIENDA_CODESTVIV INT,
+     TIPOVIVIENDA_CODTIPVIV INT,
+     CONSTRAINT CODVIV_PK PRIMARY KEY (CODVIV)
+ );
+
+ /*Verificar que se haya creado la tabla ubigeo*/
+ SHOW TABLES;
+
+ /* verificar estuctura de la tabla persona*/
+ SHOW COLUMNS IN VIVIENDA;
+ DESCRIBE VIVIENDA;
